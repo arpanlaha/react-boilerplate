@@ -33,7 +33,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint": "latest",
+    "eslint": "^5.0.0",
     "prettier": "latest"
   }
 }
