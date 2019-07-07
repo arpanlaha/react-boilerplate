@@ -5,6 +5,9 @@
   "dependencies": {
     "connected-react-router": "latest",
     "history": "latest",
+    "isomorphic-unfetch": "latest",
+    "next": "latest",
+    "next-redux-wrapper": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-redux": "latest",
