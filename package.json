@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/history": "^4.7.2",
+    "@types/next": "^8.0.5",
+    "@types/react": "^16.8.23",
+    "@types/react-redux": "^7.1.1",
+    "@types/zeit__next-typescript": "^0.1.2",
     "@zeit/next-css": "^0.2.1-canary.4",
-    "connected-react-router": "^6.5.0",
+    "@zeit/next-typescript": "^1.1.1",
     "css-loader": "^1.0.0",
     "history": "^4.9.0",
     "isomorphic-unfetch": "^3.0.0",
@@ -25,9 +30,9 @@
     "dev": "next src",
     "start": "next start src",
     "build": "next build src",
-    "format": "prettier --write 'src/*.{js,jsx,json,css}'",
-    "format:check": "prettier --list-different 'src/*.{js,jsx,json,css}'",
-    "lint": "eslint src"
+    "format": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
+    "format:check": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
+    "lint": "eslint \"./**/*.{js,ts,tsx}\""
   },
   "browserslist": [
     ">0.2%",
