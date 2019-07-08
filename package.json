@@ -7,7 +7,6 @@
     "connected-react-router": "^6.5.0",
     "css-loader": "^1.0.0",
     "history": "^4.9.0",
-    "ignore-loader": "^0.1.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.1.0",
     "next-page-transitions": "^1.0.0-beta.2",
@@ -19,20 +18,16 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.5.2"
   },
   "scripts": {
     "dev": "next src",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "next start src",
+    "build": "next build src",
     "format": "prettier --write 'src/*.{js,jsx,json,css}'",
     "format:check": "prettier --list-different 'src/*.{js,jsx,json,css}'",
-    "lint": "eslint src",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "lint": "eslint src"
   },
   "browserslist": [
     ">0.2%",
@@ -41,6 +36,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
     "eslint": "^5.16.0",
     "prettier": "^1.18.2"
   }
