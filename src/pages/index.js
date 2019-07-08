@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-import Instructions from "./Instructions";
-import Show from "./Show";
-import "../styles/index.css";
+import { Instructions, Show } from "../components";
+import { connect } from "react-redux";
+import "../static/style.css";
+
+const mapStateToProps = state => ({
+  example: state.example.example
+});
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +22,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Instructions />
+        <Instructions complete />
+        <h1>{this.props.example}</h1>
         {this.state.shows.map(x => (
           <Show id={x.id} name={x.name} episodes_seen={x.episodes_seen} />
         ))}
@@ -27,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

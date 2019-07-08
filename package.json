@@ -3,18 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "connected-react-router": "latest",
-    "history": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-redux": "latest",
-    "react-router": "latest",
-    "react-router-dom": "latest",
-    "react-scripts": "latest",
-    "redux": "latest",
-    "redux-thunk": "latest"
+    "@zeit/next-css": "^0.2.1-canary.4",
+    "connected-react-router": "^6.5.0",
+    "css-loader": "^1.0.0",
+    "history": "^4.9.0",
+    "ignore-loader": "^0.1.2",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^8.1.0",
+    "next-page-transitions": "^1.0.0-beta.2",
+    "next-redux-wrapper": "^3.0.0-alpha.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "dev": "next src",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "format": "prettier --write 'src/*.{js,jsx,json,css}'",
@@ -33,7 +41,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint": "^5.0.0",
-    "prettier": "latest"
+    "eslint": "^5.16.0",
+    "prettier": "^1.18.2"
   }
 }
