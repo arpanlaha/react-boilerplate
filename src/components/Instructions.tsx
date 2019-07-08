@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import { AppComponentProps } from "next/app";
 
-class Instructions extends Component {
+interface InstructionsProps extends AppComponentProps {
+  complete?: boolean;
+}
+class Instructions extends Component<InstructionsProps> {
   render() {
     return (
       <div>

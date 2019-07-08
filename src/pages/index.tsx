@@ -1,13 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, ComponentProps } from "react";
 import { Instructions, Show } from "../components";
 import { connect } from "react-redux";
+import { ReducerInterface } from "../redux/modules/reducer";
 import "../static/style.css";
+import { AppComponentProps } from "next/app";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: ReducerInterface) => ({
   example: state.example.example
 });
 
-class App extends Component {
+interface AppProps extends ComponentProps {
+  example: string;
+}
+
+class App extends Component<AppProps> {
   constructor(props) {
     super(props);
     this.state = {

@@ -10,6 +10,7 @@
     "@types/zeit__next-typescript": "^0.1.2",
     "@zeit/next-css": "^0.2.1-canary.4",
     "@zeit/next-typescript": "^1.1.1",
+    "connected-react-router": "^6.5.0",
     "css-loader": "^1.0.0",
     "history": "^4.9.0",
     "isomorphic-unfetch": "^3.0.0",
