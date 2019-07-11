@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import { AppComponentProps } from "next/app";
+import React, { Component, Props } from "react";
 
-interface InstructionsProps extends AppComponentProps {
+interface InstructionsProps extends Props<Component> {
   complete?: boolean;
 }
 class Instructions extends Component<InstructionsProps> {

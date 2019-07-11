@@ -1,5 +1,5 @@
 import React, { ErrorInfo } from "react";
-import App, { Container, NextAppContext } from "next/app";
+import App, { Container, AppContext } from "next/app";
 import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
 import configureStore from "../redux/configureStore";
@@ -8,7 +8,7 @@ import { PageTransition } from "next-page-transitions";
 
 export default withRedux(configureStore, { debug: true })(
   class MyApp extends App {
-    static async getInitialProps({ Component, ctx }: NextAppContext) {
+    static async getInitialProps({ Component, ctx }: AppContext) {
       return {
         pageProps: {
           // Call page-level getInitialProps

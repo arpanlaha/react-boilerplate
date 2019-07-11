@@ -8,9 +8,11 @@ export const history = createMemoryHistory();
 const middleware = [thunk, routerMiddleware(history)];
 const composedMiddleware = compose(applyMiddleware(...middleware));
 
-const devtools = 
-  typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
-const composeEnhancers = devtools || compose;
+let composeEnhancers = compose;
+if (typeof window !== "undefined") {
+  // @ts-ignore
+  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+}
 
 export default function configureStore() {
   return createStore(

@@ -1,6 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, Props } from "react";
 
-class App extends Component {
+export interface ShowType {
+  id: number;
+  name: string;
+  episodes_seen: number;
+}
+interface ShowProps extends Props<Component>, ShowType {}
+class Show extends Component<ShowProps> {
   // YOUR CODE GOES BELOW
 
   render() {
@@ -8,4 +14,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Show;
