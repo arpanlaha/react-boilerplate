@@ -13,7 +13,7 @@ export interface ExampleActionInterface {
 export default function reducer(
   state = example,
   action: ExampleActionInterface
-) {
+): ExampleReducerInterface {
   switch (action.type) {
     default:
       return state;

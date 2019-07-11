@@ -1,5 +1,5 @@
 import React, { ErrorInfo } from "react";
-import App, { Container, AppContext } from "next/app";
+import App, { Container, AppContext, AppInitialProps } from "next/app";
 import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
 import configureStore from "../redux/configureStore";
@@ -8,7 +8,10 @@ import { PageTransition } from "next-page-transitions";
 
 export default withRedux(configureStore, { debug: true })(
   class MyApp extends App {
-    static async getInitialProps({ Component, ctx }: AppContext) {
+    static async getInitialProps({
+      Component,
+      ctx
+    }: AppContext): Promise<AppInitialProps> {
       return {
         pageProps: {
           // Call page-level getInitialProps
@@ -19,13 +22,13 @@ export default withRedux(configureStore, { debug: true })(
       };
     }
 
-    componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
       console.error("Page Error Boundary: ", error);
       // @ts-ignore This is needed to render errors correctly in development / production
       super.componentDidCatch(error, errorInfo);
     }
 
-    render() {
+    render(): JSX.Element {
       // @ts-ignore
       const { Component, pageProps, store } = this.props;
       return (

@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware, compose, Store } from "redux";
 import { routerMiddleware } from "connected-react-router";
 import { createMemoryHistory } from "history";
 import thunk from "redux-thunk";
@@ -14,7 +14,7 @@ if (typeof window !== "undefined") {
   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 }
 
-export default function configureStore() {
+export default function configureStore(): Store {
   return createStore(
     createRootReducer(history),
     composeEnhancers(composedMiddleware)

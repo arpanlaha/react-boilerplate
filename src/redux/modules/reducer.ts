@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers, Reducer } from "redux";
 import example from "./example";
 import { MemoryHistory } from "history";
 import { connectRouter } from "connected-react-router";
@@ -8,7 +8,7 @@ export interface ReducerInterface {
   example: ExampleReducerInterface;
 }
 
-const createRootReducer = (history: MemoryHistory) =>
+const createRootReducer = (history: MemoryHistory): Reducer =>
   combineReducers({
     router: connectRouter(history),
     example

@@ -5,13 +5,14 @@ import { ReducerInterface } from "../redux/modules/reducer";
 import "../static/style.css";
 import { ShowType } from "../components/Show";
 
-const mapStateToProps = (state: ReducerInterface) => ({
+const mapStateToProps = (state: ReducerInterface): AppPropsRedux => ({
   example: state.example.example
 });
 
-interface AppProps extends Props<Component> {
+interface AppPropsRedux {
   example: string;
 }
+interface AppProps extends Props<Component>, AppPropsRedux {}
 
 interface AppState extends Readonly<{}> {
   shows: ShowType[];
@@ -22,20 +23,20 @@ class App extends Component<AppProps, AppState> {
     super(props);
     this.state = {
       shows: [
-        { id: 1, name: "Game of Thrones", episodes_seen: 0 },
-        { id: 2, name: "Naruto", episodes_seen: 220 },
-        { id: 3, name: "Black Mirror", episodes_seen: 3 }
+        { id: 1, name: "Game of Thrones", episodesSeen: 0 },
+        { id: 2, name: "Naruto", episodesSeen: 220 },
+        { id: 3, name: "Black Mirror", episodesSeen: 3 }
       ]
     };
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <div className="App">
         <Instructions complete />
         <h1>{this.props.example}</h1>
         {this.state.shows.map(x => (
-          <Show id={x.id} name={x.name} episodes_seen={x.episodes_seen} />
+          <Show id={x.id} name={x.name} episodesSeen={x.episodesSeen} />
         ))}
       </div>
     );

@@ -4,7 +4,7 @@ interface InstructionsProps extends Props<Component> {
   complete?: boolean;
 }
 class Instructions extends Component<InstructionsProps> {
-  render() {
+  render(): JSX.Element {
     return (
       <div>
         <p>

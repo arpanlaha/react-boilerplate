@@ -9,7 +9,7 @@ interface ShowProps extends Props<Component>, ShowType {}
 class Show extends Component<ShowProps> {
   // YOUR CODE GOES BELOW
 
-  render() {
+  render(): JSX.Element {
     return <div />;
   }
 }
