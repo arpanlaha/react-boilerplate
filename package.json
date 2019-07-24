@@ -4,13 +4,11 @@
   "private": true,
   "dependencies": {
     "@types/history": "^4.7.2",
-    "@types/next": "^8.0.5",
     "@types/react": "^16.8.23",
     "@types/react-redux": "^7.1.1",
-    "@types/zeit__next-typescript": "^0.1.2",
-    "@zeit/next-css": "^0.2.1-canary.4",
+    "@zeit/next-css": "^1.0.1",
     "connected-react-router": "^6.5.0",
-    "css-loader": "^1.0.0",
+    "file-loader": "^4.0.0",
     "history": "^4.9.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.0",
@@ -24,7 +22,8 @@
     "react-scripts": "^3.0.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.2",
+    "url-loader": "^2.0.1"
   },
   "scripts": {
     "dev": "next src",
