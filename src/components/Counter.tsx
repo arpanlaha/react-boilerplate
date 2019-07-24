@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Counter extends Component {
   // YOUR CODE GOES BELOW
 
-  render() {
+  render(): JSX.Element {
     return <div />;
   }
 }

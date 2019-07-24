@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@zeit/next-css": "^0.2.1-canary.4",
-    "connected-react-router": "^6.5.0",
-    "css-loader": "^1.0.0",
+    "@types/history": "^4.7.2",
+    "@types/react": "^16.8.23",
+    "@types/react-redux": "^7.1.1",
+    "@zeit/next-css": "^1.0.1",
+    "connected-react-router": "^6.5.2",
     "history": "^4.9.0",
-    "ignore-loader": "^0.1.2",
-    "isomorphic-unfetch": "^3.0.0",
-    "next": "^8.1.0",
+    "next": "^9.0.2",
     "next-page-transitions": "^1.0.0-beta.2",
     "next-redux-wrapper": "^3.0.0-alpha.3",
     "react": "^16.8.6",
@@ -19,20 +19,16 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.5.2"
   },
   "scripts": {
     "dev": "next src",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "format": "prettier --write 'src/*.{js,jsx,json,css}'",
-    "format:check": "prettier --list-different 'src/*.{js,jsx,json,css}'",
-    "lint": "eslint src",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "next start src",
+    "build": "next build src",
+    "format": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
+    "format:check": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
+    "lint": "eslint \"./**/*.{js,ts,tsx}\""
   },
   "browserslist": [
     ">0.2%",
@@ -41,6 +37,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^5.16.0",
     "prettier": "^1.18.2"
   }

@@ -1,7 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, Props } from "react";
 
-class Instructions extends Component {
-  render() {
+interface InstructionsProps extends Props<Component> {
+  complete?: boolean;
+}
+class Instructions extends Component<InstructionsProps> {
+  render(): JSX.Element {
     return (
       <div>
         <p>
