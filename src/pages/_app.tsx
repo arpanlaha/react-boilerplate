@@ -6,7 +6,7 @@ import configureStore from "../redux/configureStore";
 // @ts-ignore @types/next-page-transitions does not exist
 import { PageTransition } from "next-page-transitions";
 
-export default withRedux(configureStore, { debug: true })(
+export default withRedux(configureStore)(
   class MyApp extends App {
     static async getInitialProps({
       Component,
