@@ -1,12 +1,12 @@
 import React, { Component, Props } from "react";
 import { Instructions, Show } from "../components";
 import { connect } from "react-redux";
-import { ReducerInterface } from "../redux/modules/reducer";
+import { ReducerState } from "../redux/store";
 import "../static/style.css";
 import { ShowType } from "../components/Show";
 
-const mapStateToProps = (state: ReducerInterface): AppPropsRedux => ({
-  example: state.example.example
+const mapStateToProps = (state: ReducerState): AppPropsRedux => ({
+  example: state.example
 });
 
 interface AppPropsRedux {

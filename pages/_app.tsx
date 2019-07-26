@@ -2,11 +2,12 @@ import React, { ErrorInfo } from "react";
 import App, { Container, AppContext, AppInitialProps } from "next/app";
 import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
-import configureStore from "../redux/configureStore";
+//import configureStore from "../redux/configureStore";
+import { initializeStore } from "../redux/store";
 // @ts-ignore @types/next-page-transitions does not exist
 import { PageTransition } from "next-page-transitions";
 
-export default withRedux(configureStore)(
+export default withRedux(initializeStore as any)(
   class MyApp extends App {
     static async getInitialProps({
       Component,
