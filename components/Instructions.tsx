@@ -1,5 +1,9 @@
 import React, { Component, Props } from "react";
 
+/**
+ * Props corresponding to Instructions
+ * @property complete - an optional boolean
+ */
 interface InstructionsProps extends Props<Component> {
   complete?: boolean;
 }
