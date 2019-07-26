@@ -1,7 +1,7 @@
 import React, { Component, Props } from "react";
 import { Instructions, Show } from "../components";
 import { connect } from "react-redux";
-import { ReducerState } from "../redux/store";
+import { ReducerState } from "../redux/reducer";
 import "../static/style.css";
 import { ShowType } from "../components/Show";
 
