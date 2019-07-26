@@ -1,19 +1,26 @@
 import React, { Component, Props } from "react";
+
 import { Instructions, Show } from "../components";
-import { connect } from "react-redux";
-import { ReducerInterface } from "../redux/modules/reducer";
-import "../static/style.css";
 import { ShowType } from "../components/Show";
 
-const mapStateToProps = (state: ReducerInterface): AppPropsRedux => ({
-  example: state.example.example
+import { connect } from "react-redux";
+import { ReducerState } from "../redux/reducer";
+
+import "../static/style.css";
+
+const mapStateToProps = (state: ReducerState): ReducerState => ({
+  example: state.example
 });
 
-interface AppPropsRedux {
-  example: string;
-}
-interface AppProps extends Props<Component>, AppPropsRedux {}
+/**
+ * Extends Props with ReducerState
+ */
+interface AppProps extends Props<Component>, ReducerState {}
 
+/**
+ * THe state of the App
+ * @property shows - a list of Shows
+ */
 interface AppState extends Readonly<{}> {
   shows: ShowType[];
 }
