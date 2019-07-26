@@ -1,18 +1,25 @@
 import React, { ErrorInfo } from "react";
+
 import App, { Container, AppContext, AppInitialProps } from "next/app";
+
+import { Store } from "redux";
 import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
 import { initializeStore } from "../redux/store";
+
 // @ts-ignore @types/next-page-transitions does not exist
 import { PageTransition } from "next-page-transitions";
-import { Store } from "redux";
 
+/**
+ * Props with a Redux store
+ * @property store
+ */
 interface PropsWithRedux extends AppInitialProps {
   store: Store;
 }
 
 export default withRedux(initializeStore as any)(
-  class MyApp extends App<PropsWithRedux> {
+  class WrappedApp extends App<PropsWithRedux> {
     static async getInitialProps({
       Component,
       ctx
