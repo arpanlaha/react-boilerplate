@@ -6,7 +6,7 @@ import { ShowType } from "../components/Show";
 import { connect } from "react-redux";
 import { ReducerState } from "../redux/reducer";
 
-import "../static/style.css";
+import "../static/style.scss";
 
 const mapStateToProps = (state: ReducerState): ReducerState => ({
   example: state.example
