@@ -42,9 +42,16 @@ class App extends Component<AppProps, AppState> {
       <div className="App">
         <Instructions complete />
         <h1>{this.props.example}</h1>
-        {this.state.shows.map(x => (
-          <Show id={x.id} name={x.name} episodesSeen={x.episodesSeen} />
-        ))}
+        {this.state.shows.map(
+          (show: ShowType): JSX.Element => (
+            <Show
+              key={show.id}
+              id={show.id}
+              name={show.name}
+              episodesSeen={show.episodesSeen}
+            />
+          )
+        )}
       </div>
     );
   }
