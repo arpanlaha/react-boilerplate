@@ -1,6 +1,6 @@
 /* eslint-disable */
 // workaround from https://github.com/zeit/next-plugins/issues/392#issuecomment-475845330
-const withCSS = require("@zeit/next-css");
+const withSass = require("@zeit/next-sass");
 
 function HACK_removeMinimizeOptionFromCssLoaders(config) {
   config.module.rules.forEach(rule => {
@@ -14,7 +14,7 @@ function HACK_removeMinimizeOptionFromCssLoaders(config) {
   });
 }
 
-module.exports = withCSS({
+module.exports = withSass({
   webpack(config) {
     HACK_removeMinimizeOptionFromCssLoaders(config);
     return config;
