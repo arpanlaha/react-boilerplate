@@ -18,9 +18,9 @@ class Head extends Component<HeadProps> {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="language" content="English" />
         <title>
-          {this.props.title
-            ? `${this.props.title} | React Boilerplate`
-            : "React Boilerplate"}
+          {`${
+            this.props.title ? `${this.props.title} | ` : ""
+          }React Boilerplate`}
         </title>
       </NextHead>
     );
