@@ -14,11 +14,16 @@ class Head extends Component<HeadProps> {
         <meta charSet="UTF-8" />
         <meta
           name="description"
-          content={this.props.description || "Arpan Laha's personal website"}
+          content={
+            this.props.description ||
+            "A React boilerplate written in TypeScript with support for Next.js, Redux, and SCSS"
+          }
         />
         <meta
           name="keywords"
-          content={this.props.keywords || "Arpan, Laha, Arpan Laha"}
+          content={
+            this.props.keywords || "React, Next, Redux, SCSS, Boilerplate"
+          }
         />
         <meta name="author" content="Arpan Laha" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
