@@ -1,4 +1,4 @@
-# react-boilerplate [![CircleCI](https://circleci.com/gh/arpanlaha/react-boilerplate.svg?style=svg)](https://circleci.com/gh/arpanlaha/react-boilerplate)
+# [react-boilerplate](https://react-boilerplate.arpanlaha.now.sh/) [![CircleCI](https://circleci.com/gh/arpanlaha/react-boilerplate.svg?style=svg)](https://circleci.com/gh/arpanlaha/react-boilerplate)
 
 ## Overview
 
