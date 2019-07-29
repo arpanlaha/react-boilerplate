@@ -1,61 +1,74 @@
-import React, { Component, Props } from "react";
+import React, { Component, FormEvent, Props } from "react";
 
-import { Head, Instructions, Show } from "../components";
-import { ShowType } from "../components/Show";
+import { Example, Head } from "../components";
 
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { ReducerState } from "../redux/reducer";
+import { setExample } from "../redux/reducer";
 
 import "../static/style.scss";
 
-const mapStateToProps = (state: ReducerState): ReducerState => ({
-  example: state.example
-});
+const mapStateToProps = (): any => ({});
+
+const mapDispatchToProps = (dispatch): any => {
+  return bindActionCreators({ setExample }, dispatch);
+};
 
 /**
- * Extends Props with ReducerState
- */
-interface AppProps extends Props<Component>, ReducerState {}
-
-/**
- * THe state of the App
- * @property shows - a list of Shows
+ * THe state of the App.
+ * @property nexExample - the inputted new example.
  */
 interface AppState extends Readonly<{}> {
-  shows: ShowType[];
+  newExample: string;
 }
 
+/**
+ * The props belonging to App.
+ * @property setExample - the redux action obtained through mapDispatchToProps.
+ */
+interface AppProps extends Props<Component> {
+  setExample: (example: string) => void;
+}
+
+/**
+ * The home page.
+ */
 class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
     this.state = {
-      shows: [
-        { id: 1, name: "Game of Thrones", episodesSeen: 0 },
-        { id: 2, name: "Naruto", episodesSeen: 220 },
-        { id: 3, name: "Black Mirror", episodesSeen: 3 }
-      ]
+      newExample: ""
     };
   }
+
+  /**
+   * Called when the input text changes.
+   * Sets this.state.newExample to the inputted text.
+   */
+  updateExample = (event: FormEvent<HTMLInputElement>): void => {
+    this.setState({ newExample: event.currentTarget.value });
+  };
+
+  /**
+   * Called when the submit button is clicked.
+   * Passes in the current value of this.state.newExample to this.props.setExample.
+   */
+  handleSubmit = (): void => this.props.setExample(this.state.newExample);
 
   render(): JSX.Element {
     return (
       <div className="App">
         <Head />
-        <Instructions complete />
-        <h1>{this.props.example}</h1>
-        {this.state.shows.map(
-          (show: ShowType): JSX.Element => (
-            <Show
-              key={show.id}
-              id={show.id}
-              name={show.name}
-              episodesSeen={show.episodesSeen}
-            />
-          )
-        )}
+        <Example />
+        <h2>Enter new example text below:</h2>
+        <input type="text" onChange={this.updateExample}></input>
+        <button onClick={this.handleSubmit}>Submit</button>
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

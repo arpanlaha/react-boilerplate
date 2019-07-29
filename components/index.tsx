@@ -1,6 +1,4 @@
-import Counter from "./Counter";
+import Example from "./Example";
 import Head from "./Head";
-import Instructions from "./Instructions";
-import Show from "./Show";
 
-export { Counter, Head, Instructions, Show };
+export { Example, Head };

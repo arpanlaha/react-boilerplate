@@ -1,12 +1,21 @@
 import React, { Component, Props } from "react";
 import NextHead from "next/head";
 
+/**
+ * The possible props passed to Head.
+ * @property title - a string.
+ * @property description - a string.
+ * @property keyword - a string containing comma-separated values.
+ */
 interface HeadProps extends Props<Component> {
   title?: string;
   description?: string;
   keywords?: string;
 }
 
+/**
+ * Injects information into the <head> tag.
+ */
 class Head extends Component<HeadProps> {
   render(): JSX.Element {
     return (
