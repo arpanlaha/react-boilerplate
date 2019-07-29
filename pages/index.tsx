@@ -1,6 +1,6 @@
 import React, { Component, Props } from "react";
 
-import { Instructions, Show } from "../components";
+import { Head, Instructions, Show } from "../components";
 import { ShowType } from "../components/Show";
 
 import { connect } from "react-redux";
@@ -40,6 +40,7 @@ class App extends Component<AppProps, AppState> {
   render(): JSX.Element {
     return (
       <div className="App">
+        <Head />
         <Instructions complete />
         <h1>{this.props.example}</h1>
         {this.state.shows.map(
