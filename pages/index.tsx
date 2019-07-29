@@ -4,15 +4,33 @@ import { Example, Head } from "../components";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { setExample } from "../redux/reducer";
+import { ReducerState, setExample } from "../redux/reducer";
 
 import "../static/style.scss";
 
-const mapStateToProps = (): any => ({});
+const mapStateToProps = (state: ReducerState): AppReduxProps => ({
+  example: state.example
+});
 
 const mapDispatchToProps = (dispatch): any => {
   return bindActionCreators({ setExample }, dispatch);
 };
+
+/**
+ * App props derived from mapStateToProps
+ * @property example - a string
+ */
+interface AppReduxProps {
+  example: string;
+}
+
+/**
+ * The props belonging to App, extending AppReduxProps
+ * @property setExample - the redux action obtained through mapDispatchToProps.
+ */
+interface AppProps extends Props<Component>, AppReduxProps {
+  setExample: (example: string) => void;
+}
 
 /**
  * THe state of the App.
@@ -23,21 +41,13 @@ interface AppState extends Readonly<{}> {
 }
 
 /**
- * The props belonging to App.
- * @property setExample - the redux action obtained through mapDispatchToProps.
- */
-interface AppProps extends Props<Component> {
-  setExample: (example: string) => void;
-}
-
-/**
  * The home page.
  */
 class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
     this.state = {
-      newExample: ""
+      newExample: this.props.example
     };
   }
 
@@ -60,8 +70,18 @@ class App extends Component<AppProps, AppState> {
       <div className="App">
         <Head />
         <Example />
-        <h2>Enter new example text below:</h2>
-        <input type="text" onChange={this.updateExample}></input>
+        <h2>
+          <label>
+            Enter new example text below:
+            <br />
+            <input
+              type="text"
+              value={this.state.newExample}
+              onChange={this.updateExample}
+            ></input>
+          </label>
+        </h2>
+
         <button onClick={this.handleSubmit}>Submit</button>
       </div>
     );
