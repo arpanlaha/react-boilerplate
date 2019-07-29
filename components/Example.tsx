@@ -10,7 +10,7 @@ const mapStateToProps = (state: ReducerState): ExampleReduxProps => ({
 /**
  * Props introduced by mapStateToProps.
  * NOTE: in this case, ExampleReduxProps is separated from ExampleProps to differentiate between Redux and normal props.
- * @property example our example redux state.
+ * @property example - our example Redux state.
  */
 interface ExampleReduxProps {
   example: string;

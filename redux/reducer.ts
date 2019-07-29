@@ -1,15 +1,15 @@
 /**
- * The state managed by the reducer
- * @property example - a string
+ * The state managed by the reducer.
+ * @property example - a string.
  */
 export interface ReducerState {
   example: string;
 }
 
 /**
- * The action operating on our reducer
- * @property type - the type f the actin
- * @property value - the value carried by the action
+ * The action operating on our reducer.
+ * @property type - the type of the action.
+ * @property value - the value carried by the action.
  */
 export interface Action {
   type: ActionTypes;
@@ -17,7 +17,7 @@ export interface Action {
 }
 
 /**
- * The possible action types
+ * The possible action types.
  * @member SET_EXAMPLE
  */
 enum ActionTypes {
@@ -25,17 +25,17 @@ enum ActionTypes {
 }
 
 /**
- * The initial state fed into the reducer
+ * The initial state fed into the reducer.
  */
 export const initialState: ReducerState = {
   example: "example"
 };
 
 /**
- * The reducer function
- * @param state the previous state
- * @param action the incoming action
- * @returns the new state
+ * The reducer function.
+ * @param state the previous state.
+ * @param action the incoming action.
+ * @returns the new state.
  */
 export const reducer = (
   state: ReducerState = initialState,
@@ -53,9 +53,9 @@ export const reducer = (
 };
 
 /**
- * An example action
- * @param example the example value
- * @return the action containing the example value
+ * An example action.
+ * @param example the example value.
+ * @return the action containing the example value.
  */
 export const setExample = (example: string): Action => {
   return { type: ActionTypes.SET_EXAMPLE, value: example };
