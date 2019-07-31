@@ -1,4 +1,4 @@
-import React, { Component, FormEvent, Props } from "react";
+import React, { ChangeEvent, Component, Props } from "react";
 
 import { Example, Head } from "../components";
 
@@ -55,8 +55,8 @@ class App extends Component<AppProps, AppState> {
    * Called when the input text changes.
    * Sets this.state.newExample to the inputted text.
    */
-  updateExample = (event: FormEvent<HTMLInputElement>): void => {
-    this.setState({ newExample: event.currentTarget.value });
+  updateExample = (event: ChangeEvent<HTMLInputElement>): void => {
+    this.setState({ newExample: event.target.value });
   };
 
   /**
