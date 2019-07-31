@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Component, Props } from "react";
+import React, { ChangeEvent, Component, Props, ReactNode } from "react";
 
 import { Example, Head } from "../components";
 
@@ -65,7 +65,7 @@ class App extends Component<AppProps, AppState> {
    */
   handleSubmit = (): void => this.props.setExample(this.state.newExample);
 
-  render(): JSX.Element {
+  render(): ReactNode {
     return (
       <div className="App">
         <Head />

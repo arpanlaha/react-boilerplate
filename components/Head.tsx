@@ -1,4 +1,4 @@
-import React, { Component, Props } from "react";
+import React, { Component, Props, ReactNode } from "react";
 import NextHead from "next/head";
 
 /**
@@ -17,7 +17,7 @@ interface HeadProps extends Props<Component> {
  * Injects information into the <head> tag.
  */
 class Head extends Component<HeadProps> {
-  render(): JSX.Element {
+  render(): ReactNode {
     return (
       <NextHead>
         <meta charSet="UTF-8" />

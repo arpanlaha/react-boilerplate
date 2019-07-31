@@ -1,4 +1,4 @@
-import React, { Component, Props } from "react";
+import React, { Component, Props, ReactNode } from "react";
 
 import { connect } from "react-redux";
 import { ReducerState } from "../redux/reducer";
@@ -25,7 +25,7 @@ interface ExampleProps extends Props<Component>, ExampleReduxProps {}
  * A component to show off the current Redux state.
  */
 class Example extends Component<ExampleProps> {
-  render(): JSX.Element {
+  render(): ReactNode {
     return <h1>The current Redux state is: {this.props.example}</h1>;
   }
 }
