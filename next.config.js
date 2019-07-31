@@ -1,7 +1,14 @@
+/**
+ * @file Configuring Next.
+ */
+
 /* eslint-disable */
-// workaround from https://github.com/zeit/next-plugins/issues/392#issuecomment-475845330
 const withSass = require("@zeit/next-sass");
 
+/**
+ * A hack to avoid errors from improperly configured options
+ * From https://github.com/zeit/next-plugins/issues/392#issuecomment-475845330
+ */
 function HACK_removeMinimizeOptionFromCssLoaders(config) {
   config.module.rules.forEach(rule => {
     if (Array.isArray(rule.use)) {

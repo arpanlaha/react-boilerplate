@@ -1,3 +1,7 @@
+/**
+ * @file A modular extension to Next's Head component.
+ */
+
 import React, { Component, Props, ReactNode } from "react";
 import NextHead from "next/head";
 

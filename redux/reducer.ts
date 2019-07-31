@@ -1,4 +1,8 @@
 /**
+ * @file Defining the the Redux state and actions.
+ */
+
+/**
  * The state managed by the reducer.
  * @property example - a string.
  */

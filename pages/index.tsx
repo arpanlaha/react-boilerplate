@@ -1,3 +1,7 @@
+/**
+ * @file The home page.
+ */
+
 import React, { ChangeEvent, Component, Props, ReactNode } from "react";
 
 import { Example, Head } from "../components";

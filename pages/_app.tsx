@@ -1,3 +1,7 @@
+/**
+ * @file Configuring page initialization.
+ */
+
 import React, { ErrorInfo } from "react";
 
 import App, { AppContext, AppInitialProps, Container } from "next/app";

@@ -1,4 +1,9 @@
+/**
+ * @file Augmenting <html> and <body> tags.
+ */
+
 import React from "react";
+
 import Document, {
   DocumentContext,
   DocumentInitialProps,

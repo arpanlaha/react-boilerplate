@@ -1,3 +1,7 @@
+/**
+ * An example componenting interfacing with Redux.
+ */
+
 import React, { Component, Props, ReactNode } from "react";
 
 import { connect } from "react-redux";
