@@ -16,12 +16,12 @@
     "typescript": "^3.5.2"
   },
   "scripts": {
-    "dev": "next",
-    "start": "next start",
     "build": "next build",
+    "dev": "next",
     "format": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
     "format:check": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
     "lint": "eslint \"./**/*.{js,ts,tsx}\"",
+    "start": "next start",
     "typecheck": "tsc"
   },
   "browserslist": [
