@@ -27,9 +27,8 @@ const mapStateToProps = (state: ReducerState): AppReduxStateProps => ({
  * @param dispatch the Redux dispatch.
  * @returns the fetched action props.
  */
-const mapDispatchToProps = (dispatch: Dispatch): AppReduxActionProps => {
-  return bindActionCreators({ setExample }, dispatch);
-};
+const mapDispatchToProps = (dispatch: Dispatch): AppReduxActionProps =>
+  bindActionCreators({ setExample }, dispatch);
 
 /**
  * App props derived from mapStateToProps

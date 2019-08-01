@@ -14,6 +14,5 @@ import { initialState, reducer, ReducerState } from "./reducer";
  */
 export const initializeStore = (
   state: ReducerState = initialState
-): Store<ReducerState, Action> => {
-  return createStore(reducer, state, composeWithDevTools(applyMiddleware()));
-};
+): Store<ReducerState, Action> =>
+  createStore(reducer, state, composeWithDevTools(applyMiddleware()));

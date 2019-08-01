@@ -25,6 +25,7 @@ export enum ActionTypes {
  * @param example the example value.
  * @return the action containing the example value.
  */
-export const setExample = (example: string): Action => {
-  return { type: ActionTypes.SET_EXAMPLE, value: example };
-};
+export const setExample = (example: string): Action => ({
+  type: ActionTypes.SET_EXAMPLE,
+  value: example
+});
