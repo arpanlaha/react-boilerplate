@@ -21,7 +21,8 @@
     "build": "next build",
     "format": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
     "format:check": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
-    "lint": "eslint \"./**/*.{js,ts,tsx}\""
+    "lint": "eslint \"./**/*.{js,ts,tsx}\"",
+    "typecheck": "tsc"
   },
   "browserslist": [
     ">0.2%",
