@@ -1,6 +1,8 @@
 /**
- * @file Defining the the Redux state and actions.
+ * @file Defining the the Redux state and reducer.
  */
+
+import { Action, ActionTypes } from "./actions";
 
 /**
  * The state managed by the reducer.
@@ -8,24 +10,6 @@
  */
 export interface ReducerState {
   example: string;
-}
-
-/**
- * The action operating on our reducer.
- * @property type - the type of the action.
- * @property value - the value carried by the action.
- */
-export interface Action {
-  type: ActionTypes;
-  value: any;
-}
-
-/**
- * The possible action types.
- * @member SET_EXAMPLE
- */
-enum ActionTypes {
-  SET_EXAMPLE = "SET_EXAMPLE"
 }
 
 /**
@@ -54,13 +38,4 @@ export const reducer = (
     default:
       return state;
   }
-};
-
-/**
- * An example action.
- * @param example the example value.
- * @return the action containing the example value.
- */
-export const setExample = (example: string): Action => {
-  return { type: ActionTypes.SET_EXAMPLE, value: example };
 };

@@ -8,7 +8,8 @@ import { Example, Head } from "../components";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { ReducerState, setExample } from "../redux/reducer";
+import { setExample } from "../redux/actions";
+import { ReducerState } from "../redux/reducer";
 
 import "../static/style.scss";
 
