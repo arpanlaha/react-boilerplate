@@ -6,18 +6,28 @@ import React, { ChangeEvent, Component, Props, ReactNode } from "react";
 
 import { Example, Head } from "../components";
 
-import { bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
 import { setExample } from "../redux/actions";
 import { ReducerState } from "../redux/reducer";
 
 import "../static/style.scss";
 
-const mapStateToProps = (state: ReducerState): AppReduxProps => ({
+/**
+ * Fetches Redux state and assigns it to props.
+ * @param state the Redux state.
+ * @returns the fetched state props.
+ */
+const mapStateToProps = (state: ReducerState): AppReduxStateProps => ({
   example: state.example
 });
 
-const mapDispatchToProps = (dispatch): any => {
+/**
+ * Fetchs Redux actions and assigns them to props.
+ * @param dispatch the Redux dispatch.
+ * @returns the fetched action props.
+ */
+const mapDispatchToProps = (dispatch: Dispatch): AppReduxActionProps => {
   return bindActionCreators({ setExample }, dispatch);
 };
 
@@ -25,23 +35,31 @@ const mapDispatchToProps = (dispatch): any => {
  * App props derived from mapStateToProps
  * @property example - a string
  */
-interface AppReduxProps {
+interface AppReduxStateProps {
   example: string;
 }
 
 /**
- * The props belonging to App, extending AppReduxProps
- * @property setExample - the redux action obtained through mapDispatchToProps.
+ * App props derived from mapDispatchToProps
+ * @property setExample - an action setting example
  */
-interface AppProps extends Props<Component>, AppReduxProps {
+interface AppReduxActionProps {
   setExample: (example: string) => void;
 }
+
+/**
+ * The props belonging to App, extending AppReduxStateProps and AppReduxActionProps
+ */
+interface AppProps
+  extends Props<Component>,
+    AppReduxStateProps,
+    AppReduxActionProps {}
 
 /**
  * THe state of the App.
  * @property nexExample - the inputted new example.
  */
-interface AppState extends Readonly<{}> {
+interface AppState {
   newExample: string;
 }
 
@@ -70,6 +88,9 @@ class App extends Component<AppProps, AppState> {
    */
   handleSubmit = (): void => this.props.setExample(this.state.newExample);
 
+  /**
+   * Renders the component.
+   */
   render(): ReactNode {
     return (
       <div className="App">

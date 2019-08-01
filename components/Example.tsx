@@ -7,6 +7,11 @@ import React, { Component, Props, ReactNode } from "react";
 import { connect } from "react-redux";
 import { ReducerState } from "../redux/reducer";
 
+/**
+ * Fetches Redux state and assigns it to props.
+ * @param state the Redux state.
+ * @returns the fetched state props.
+ */
 const mapStateToProps = (state: ReducerState): ExampleReduxProps => ({
   example: state.example
 });
@@ -29,6 +34,9 @@ interface ExampleProps extends Props<Component>, ExampleReduxProps {}
  * A component to show off the current Redux state.
  */
 class Example extends Component<ExampleProps> {
+  /**
+   * Renders the component.
+   */
   render(): ReactNode {
     return <h1>The current Redux state is: {this.props.example}</h1>;
   }

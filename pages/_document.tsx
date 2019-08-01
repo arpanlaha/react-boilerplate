@@ -13,7 +13,15 @@ import Document, {
   NextScript
 } from "next/document";
 
+/**
+ * Extends functionality of the default Next document.
+ */
 class MyDocument extends Document {
+  /**
+   * Fetches initial props.
+   * @param ctx the Next document context.
+   * @returns the document's initial props.
+   */
   static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {

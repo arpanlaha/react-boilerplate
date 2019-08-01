@@ -21,6 +21,9 @@ interface HeadProps extends Props<Component> {
  * Injects information into the <head> tag.
  */
 class Head extends Component<HeadProps> {
+  /**
+   * Renders the component.
+   */
   render(): ReactNode {
     return (
       <NextHead>

@@ -2,7 +2,7 @@
  * @file Configuring page initialization.
  */
 
-import React, { ErrorInfo } from "react";
+import React from "react";
 
 import App, { AppContext, AppInitialProps, Container } from "next/app";
 
@@ -22,8 +22,20 @@ interface PropsWithRedux extends AppInitialProps {
   store: Store;
 }
 
+/**
+ * Injects Redux functionality into the app.
+ */
 export default withRedux(initializeStore as any)(
+  /**
+   * Wraps the default Next app.
+   */
   class WrappedApp extends App<PropsWithRedux> {
+    /**
+     * Fetches initial props.
+     * @param Component the component being rendered.
+     * @param ctx the Next page context.
+     * @returns the app's initial props.
+     */
     static async getInitialProps({
       Component,
       ctx
@@ -38,11 +50,19 @@ export default withRedux(initializeStore as any)(
       };
     }
 
-    componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+    /**
+     * Called on caught errors.
+     * @param error the caught error.
+     * @param errorInfo information about the caught Error.
+     */
+    componentDidCatch(error, errorInfo): void {
       console.error("Page Error Boundary: ", error);
       super.componentDidCatch(error, errorInfo);
     }
 
+    /**
+     * Renders the app.
+     */
     render(): JSX.Element {
       const { Component, pageProps, store } = this.props;
       return (
