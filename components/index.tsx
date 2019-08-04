@@ -4,6 +4,6 @@
 
 import Example from "./Example";
 import Head from "./Head";
-import Loader from "./Loader";
+import LoadWrapper from "./LoadWrapper";
 
-export { Example, Head, Loader };
+export { Example, Head, LoadWrapper };

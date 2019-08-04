@@ -4,7 +4,7 @@
 
 import React, { ChangeEvent, Component, Props, ReactNode } from "react";
 
-import { Example, Head, Loader } from "../components";
+import { Example, Head, LoadWrapper } from "../components";
 
 import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
@@ -128,7 +128,7 @@ class App extends Component<AppProps, AppState> {
         <button onClick={this.handleSubmit}>Submit</button>
         <br />
         <h2>Below is an example Loader-wrapped message: </h2>
-        <Loader
+        <LoadWrapper
           loadFunction={this.loadMessage}
           loadState="Wait 2 seconds"
           resolvedState={this.state.message}

@@ -46,7 +46,7 @@ interface LoaderState {
 /**
  * Wraps loading functionality
  */
-class Loader extends Component<LoaderProps, LoaderState> {
+class LoadWrapper extends Component<LoaderProps, LoaderState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -97,4 +97,4 @@ class Loader extends Component<LoaderProps, LoaderState> {
   }
 }
 
-export default Loader;
+export default LoadWrapper;
