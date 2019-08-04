@@ -19,7 +19,7 @@ enum LoadState {
 }
 
 /**
- * The possible props passed to Head.
+ * The possible props passed to LoadWrapper.
  * @property loadFunction - the async function being loaded.
  * @property loadState - the optional ReactNode to be rendered while loadFunction is loading.
  * @property resolvedState - the ReactNode to be rendered once loadFunction resolves.
