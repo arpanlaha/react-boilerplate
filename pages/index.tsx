@@ -4,7 +4,7 @@
 
 import React, { ChangeEvent, Component, Props, ReactNode } from "react";
 
-import { Example, Head } from "../components";
+import { Example, Head, Loader } from "../components";
 
 import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
@@ -57,9 +57,11 @@ interface AppProps
 /**
  * THe state of the App.
  * @property nexExample - the inputted new example.
+ * @Propert message - the loaded message.
  */
 interface AppState {
   newExample: string;
+  message: string;
 }
 
 /**
@@ -69,7 +71,8 @@ class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
     this.state = {
-      newExample: this.props.example
+      newExample: this.props.example,
+      message: null
     };
   }
 
@@ -86,6 +89,22 @@ class App extends Component<AppProps, AppState> {
    * Passes in the current value of this.state.newExample to this.props.setExample.
    */
   handleSubmit = (): void => this.props.setExample(this.state.newExample);
+
+  /**
+   * An example function for loading data.
+   */
+  loadMessage = async (): Promise<void> => {
+    /**
+     * A helper method for sleeping for a designated length of time time.
+     * @param ms the milliseconds to sleep for.
+     */
+    function sleep(ms): Promise<any> {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    const timeOut = 2000;
+    await sleep(timeOut);
+    this.setState({ message: "Loaded!" });
+  };
 
   /**
    * Renders the component.
@@ -106,8 +125,14 @@ class App extends Component<AppProps, AppState> {
             ></input>
           </label>
         </h2>
-
         <button onClick={this.handleSubmit}>Submit</button>
+        <br />
+        <h2>Below is an example Loader-wrapped message: </h2>
+        <Loader
+          loadFunction={this.loadMessage}
+          loadState="Wait 2 seconds"
+          resolvedState={this.state.message}
+        />
       </div>
     );
   }
