@@ -44,7 +44,8 @@ interface LoaderState {
 }
 
 /**
- * Wraps loading functionality
+ * Wraps loading functionality.
+ * Displays specified state after calling this.props.loadFunction, with options for custom loading and error states.
  */
 class LoadWrapper extends Component<LoaderProps, LoaderState> {
   constructor(props) {
@@ -57,7 +58,7 @@ class LoadWrapper extends Component<LoaderProps, LoaderState> {
 
   /**
    * Called immediately after the component is inserted into the DOM tree.
-   * Calls this.props.loadFunction and manages this.state.loadState
+   * Calls this.props.loadFunction and manages this.state.loadState.
    */
   async componentDidMount(): Promise<void> {
     this.setState({ loadState: LoadState.LOADING });

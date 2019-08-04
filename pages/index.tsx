@@ -56,7 +56,7 @@ interface AppProps
 
 /**
  * THe state of the App.
- * @property nexExample - the inputted new example.
+ * @property newExample - the inputted new example.
  * @Propert message - the loaded message.
  */
 interface AppState {
