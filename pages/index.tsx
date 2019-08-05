@@ -127,7 +127,7 @@ class App extends Component<AppProps, AppState> {
         </h2>
         <button onClick={this.handleSubmit}>Submit</button>
         <br />
-        <h2>Below is an example Loader-wrapped message: </h2>
+        <h2>Below is an example LoadWrapper-wrapped message: </h2>
         <LoadWrapper
           loadFunction={this.loadMessage}
           loadState="Wait 2 seconds"
