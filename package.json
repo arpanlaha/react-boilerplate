@@ -20,7 +20,7 @@
     "dev": "next",
     "format": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
     "format:check": "prettier --write \"./**/*.{js,ts,tsx,json,md}\"",
-    "lint": "eslint \"./**/*.{js,ts,tsx}\"",
+    "lint": "eslint \"./**/*.{js,ts,tsx}\" && markdownlint README.md",
     "start": "next start",
     "typecheck": "tsc"
   },
@@ -40,6 +40,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+    "markdownlint-cli": "^0.17.0",
     "prettier": "^1.18.2"
   }
 }
