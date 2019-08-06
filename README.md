@@ -14,7 +14,7 @@ This boilerplate supports Next.js, Redux, SCSS, and is written in TypeScript. I 
 
 While still a work in progress, this boilerplate intends to demonstrate use cases for all of its functionality, and aims to maximize its scores using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/).
 
-Additionally, this boilerplate is usable with [Now 2.0](https://zeit.co/now) with zero additional configuration, and comes with a `config.yml` file for running audit, format, lint, and typecheck scripts on [CircleCI](https://circleci.com/).
+Additionally, this boilerplate is usable with [Now 2.0](https://zeit.co/now) with zero additional configuration, and comes with a `config.yml` file for running audit, format, lint, typecheck, and build scripts on [CircleCI](https://circleci.com/).
 
 ## TypeScript
 
@@ -68,3 +68,13 @@ In the case of dependencies that neither ship with types or have a corresponding
 // @ts-ignore
 import { PageTransition } from "next-page-transitions";
 ```
+
+## ESLint
+
+This boilerplate's `lint` script uses ESLint, the de facto linter for JavaScript which has recently been chosen as the de facto TypeScript linter as well. ESLint configuration is specified in a `.eslintrc` file, where parsers, plugins, and specific rules can be configured as necessary. In this boilerplate `.eslintrc.json` draws heavily from `eslint-config-react-app`, omitting `flowtype` and `react-hooks` ESLint plugins as TypeScript is used instead of flow and Redux is used instead of React Hooks. Additionally, any TypeScript React project using ESLint must specify `@typescript-eslint/parser` as the parser and enable `jsx` in `parserOptions`.
+
+For the plugins used, `.eslintrc.json` extends configs defined in those plugins - the majority of rules enabled are through these configs. However, additional rules can be and are specified in the `rules` field. This boilerplate chooses to enable many rules in this manner - however, disabling any rule can be done by specifying it as "off".
+
+### `no-explicit-any`
+
+`.eslintrc.json` disables `@typescript-eslint/no-explicit-any`, which throws an error any time the `any` type is used explicitly. **However, you should avoid using the `any` type unless absolutely necessary.**
