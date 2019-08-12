@@ -2,7 +2,7 @@
  * @file Configuring page initialization.
  */
 
-import React from "react";
+import React, { ErrorInfo } from "react";
 
 import App, { AppContext, AppInitialProps, Container } from "next/app";
 
@@ -55,7 +55,7 @@ export default withRedux(initializeStore as any)(
      * @param error the caught error.
      * @param errorInfo information about the caught Error.
      */
-    componentDidCatch(error, errorInfo): void {
+    componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
       console.error("Page Error Boundary: ", error);
       super.componentDidCatch(error, errorInfo);
     }

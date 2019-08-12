@@ -40,7 +40,7 @@ interface LoaderProps extends Props<Component> {
  */
 interface LoaderState {
   loadState: LoadState;
-  error: Error;
+  error: Error | null;
 }
 
 /**
@@ -48,7 +48,7 @@ interface LoaderState {
  * Displays specified state after calling this.props.loadFunction, with options for custom loading and error states.
  */
 class LoadWrapper extends Component<LoaderProps, LoaderState> {
-  constructor(props) {
+  constructor(props: LoaderProps) {
     super(props);
     this.state = {
       loadState: LoadState.INITIAL,

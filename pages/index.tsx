@@ -61,14 +61,14 @@ interface AppProps
  */
 interface AppState {
   newExample: string;
-  message: string;
+  message: string | null;
 }
 
 /**
  * The home page.
  */
 class App extends Component<AppProps, AppState> {
-  constructor(props) {
+  constructor(props: AppProps) {
     super(props);
     this.state = {
       newExample: this.props.example,
@@ -98,7 +98,7 @@ class App extends Component<AppProps, AppState> {
      * A helper method for sleeping for a designated length of time time.
      * @param ms the milliseconds to sleep for.
      */
-    function sleep(ms): Promise<any> {
+    function sleep(ms: number): Promise<any> {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
     const timeOut = 2000;
