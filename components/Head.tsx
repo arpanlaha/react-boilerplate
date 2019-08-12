@@ -21,7 +21,7 @@ interface HeadProps extends Props<Component> {
 /**
  * Injects information into the <head> tag.
  */
-class Head extends Component<HeadProps> {
+export default class Head extends Component<HeadProps> {
   /**
    * Renders the component.
    */
@@ -53,5 +53,3 @@ class Head extends Component<HeadProps> {
     );
   }
 }
-
-export default Head;

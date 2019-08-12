@@ -47,7 +47,7 @@ interface LoaderState {
  * Wraps loading functionality.
  * Displays specified state after calling this.props.loadFunction, with options for custom loading and error states.
  */
-class LoadWrapper extends Component<LoaderProps, LoaderState> {
+export default class LoadWrapper extends Component<LoaderProps, LoaderState> {
   constructor(props: LoaderProps) {
     super(props);
     this.state = {
@@ -97,5 +97,3 @@ class LoadWrapper extends Component<LoaderProps, LoaderState> {
     }
   }
 }
-
-export default LoadWrapper;

@@ -33,13 +33,13 @@ interface ExampleProps extends Props<Component>, ExampleReduxProps {}
 /**
  * A component to show off the current Redux state.
  */
-class Example extends Component<ExampleProps> {
-  /**
-   * Renders the component.
-   */
-  render(): ReactNode {
-    return <h1>The current Redux state is: {this.props.example}</h1>;
+export default connect(mapStateToProps)(
+  class Example extends Component<ExampleProps> {
+    /**
+     * Renders the component.
+     */
+    render(): ReactNode {
+      return <h1>The current Redux state is: {this.props.example}</h1>;
+    }
   }
-}
-
-export default connect(mapStateToProps)(Example);
+);

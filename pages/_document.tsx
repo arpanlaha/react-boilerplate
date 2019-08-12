@@ -16,7 +16,7 @@ import Document, {
 /**
  * Extends functionality of the default Next document.
  */
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   /**
    * Fetches initial props.
    * @param ctx the Next document context.
@@ -41,5 +41,3 @@ class MyDocument extends Document {
     );
   }
 }
-
-export default MyDocument;
