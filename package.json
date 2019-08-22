@@ -31,7 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@h4iuiuc/eslint-plugin": "^1.0.1",
+    "@h4iuiuc/eslint-plugin": "^1.0.4",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-redux": "^7.1.2",
