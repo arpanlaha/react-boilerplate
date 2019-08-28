@@ -66,13 +66,11 @@ export default withRedux(initializeStore as any)(
     render(): JSX.Element {
       const { Component, pageProps, store } = this.props;
       return (
-        <Container>
-          <Provider store={store}>
-            <PageTransition timeout={300} classNames="page-transition">
-              <Component {...pageProps} />
-            </PageTransition>
-          </Provider>
-        </Container>
+        <Provider store={store}>
+          <PageTransition timeout={300} classNames="page-transition">
+            <Component {...pageProps} />
+          </PageTransition>
+        </Provider>
       );
     }
   }
