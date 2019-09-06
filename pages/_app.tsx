@@ -4,7 +4,7 @@
 
 import React, { ErrorInfo } from "react";
 
-import App, { AppContext, AppInitialProps, Container } from "next/app";
+import App, { AppContext, AppInitialProps } from "next/app";
 
 import { Store } from "redux";
 import { Provider } from "react-redux";
